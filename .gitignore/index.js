@@ -1,25 +1,13 @@
-const Discord =  require('discord.js');
-const fs = require('fs');
+const Discord = require('discord.js')
+const bot = new Discord.Client()
 
-const client = new Discord.Client();
+bot.on('ready', function () {
+  console.log("Je suis connecté !")
+})
 
-var prefix = "/";
-
-
-client.login("NTAxMDcyMTY4NzYzOTE2MzE5.DqUYww.dPzgyYahf0y9nO5NbM_jYAAEqRQ");
-
-
-client.on("ready", () =>{
-    client.user.setActivity("Merci à Hunter ")
-console.log("Je suis prêt ")
-
-});
-
-
-client.on(`message`, message => {
-    
-    
-    if (message.content === "ping"){
-        message.channel.send("pong :ping_pong: ");
-        console.log(`${message.author.username} à utilisé la commande ping`)
-    }
+bot.login('NTAxMDcyMTY4NzYzOTE2MzE5.DqY5Ig.yxFWAR-SpoUDvYZhqaCIt2EFXNs')
+bot.on('message', message => {
+  if (message.content === 'ping') {
+    message.reply('pong !')
+  }
+})
